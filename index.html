@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nexus Store - Produtos Digitais Gamer</title>
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><defs><linearGradient id=%22g%22 x1=%220%%22 y1=%220%%22 x2=%22100%%22 y2=%22100%%22><stop offset=%220%%22 style=%22stop-color:%237c3aed;stop-opacity:1%22 /><stop offset=%22100%%22 style=%22stop-color:%2306b6d4;stop-opacity:1%22 /></linearGradient></defs><rect width=%22100%22 height=%22100%22 rx=%2225%22 fill=%22url(%23g)%22/><text y=%22.93em%22 x=%2250%%22 text-anchor=%22middle%22 font-family=%22Arial, sans-serif%22 font-weight=%22900%22 font-size=%2270%22 fill=%22white%22>N</text></svg>">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              nexus: {
+                50: '#f0fdfa',
+                100: '#ccfbf1',
+                200: '#99f6e4',
+                300: '#5eead4',
+                400: '#2dd4bf',
+                500: '#14b8a6',
+                600: '#0d9488',
+                700: '#0f766e',
+                800: '#115e59',
+                900: '#134e4a',
+                950: '#042f2e',
+              },
+              gaming: {
+                dark: '#0a0a0a',
+                panel: '#121212',
+                accent: '#8b5cf6', // Violet
+              }
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              slideInRight: {
+                '0%': { transform: 'translateX(100%)', opacity: '0' },
+                '100%': { transform: 'translateX(0)', opacity: '1' },
+              },
+              slideInUp: {
+                '0%': { transform: 'translateY(30px)', opacity: '0' },
+                '100%': { transform: 'translateY(0)', opacity: '1' },
+              },
+              zoomIn: {
+                '0%': { opacity: '0', transform: 'scale(0.95)' },
+                '100%': { opacity: '1', transform: 'scale(1)' },
+              },
+              rocketArrival: {
+                '0%': { transform: 'translateY(100vh) scale(0.5)', opacity: '0' },
+                '60%': { transform: 'translateY(-20px) scale(1.1)', opacity: '1' },
+                '100%': { transform: 'translateY(0) scale(1)', opacity: '1' }
+              },
+              rocketLaunch: {
+                '0%': { transform: 'translateY(0) rotate(-45deg)', filter: 'drop-shadow(0 0 0px transparent)' },
+                '10%': { transform: 'translateY(5px) rotate(-45deg) translateX(-1px)' },
+                '20%': { transform: 'translateY(-5px) rotate(-45deg) translateX(1px)' },
+                '100%': { transform: 'translateY(-150vh) rotate(-45deg) scale(1.5)', filter: 'drop-shadow(0 20px 50px rgba(139, 92, 246, 1))' }
+              },
+              shake: {
+                '0%, 100%': { transform: 'rotate(-45deg) translate(0, 0)' },
+                '25%': { transform: 'rotate(-45deg) translate(-2px, 2px)' },
+                '50%': { transform: 'rotate(-45deg) translate(2px, -2px)' },
+                '75%': { transform: 'rotate(-45deg) translate(-1px, -1px)' },
+              },
+              starsMove: {
+                '0%': { backgroundPosition: '0 0' },
+                '100%': { backgroundPosition: '0 1000px' }
+              },
+              glowPulse: {
+                '0%, 100%': { filter: 'drop-shadow(0 0 10px rgba(139, 92, 246, 0.5))' },
+                '50%': { filter: 'drop-shadow(0 0 25px rgba(139, 92, 246, 0.8))' }
+              }
+            },
+            animation: {
+              'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'fade-in': 'fadeIn 0.2s ease-out forwards',
+              'slide-in-right': 'slideInRight 0.3s ease-out forwards',
+              'slide-in-up': 'slideInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+              'zoom-in': 'zoomIn 0.2s ease-out forwards',
+              'rocket-arrival': 'rocketArrival 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+              'rocket-launch': 'rocketLaunch 1.2s cubic-bezier(0.85, 0, 0.15, 1) forwards',
+              'shake': 'shake 0.1s ease-in-out infinite',
+              'stars-move': 'starsMove 20s linear infinite',
+              'glow-pulse': 'glowPulse 2s ease-in-out infinite'
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #050505;
+        color: #e5e5e5;
+      }
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #111;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #333;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+      
+      .starfield {
+        background-image: radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+                          radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+                          radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px);
+        background-size: 550px 550px, 350px 350px, 250px 250px;
+        background-position: 0 0, 40px 60px, 130px 270px;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.561.0",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "@google/genai": "https://esm.sh/@google/genai@^1.33.0",
+    "@supabase/supabase-js": "https://esm.sh/@supabase/supabase-js@2.39.7"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
